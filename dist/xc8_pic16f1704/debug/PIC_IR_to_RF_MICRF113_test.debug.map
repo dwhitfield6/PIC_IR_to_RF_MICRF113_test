@@ -3,11 +3,11 @@ Microchip MPLAB XC8 Compiler V1.34 ()
 Linker command line:
 
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
-  -h+dist/xc8_pic16f1704/production\PIC_IR_to_RF_MICRF113_test.production.sym \
-  --cmf=dist/xc8_pic16f1704/production\PIC_IR_to_RF_MICRF113_test.production.cmf \
-  -z -Q16F1704 -oC:\Users\DWHITF~1.TDY\AppData\Local\Temp\s7uk.6 \
-  -Mdist/xc8_pic16f1704/production/PIC_IR_to_RF_MICRF113_test.production.map \
-  -E1 -ver=XC8 -ASTACK=02066h-0215fh -pstack=STACK -ACODE=00h-07FFhx2 \
+  -h+dist/xc8_pic16f1704/debug\PIC_IR_to_RF_MICRF113_test.debug.sym \
+  --cmf=dist/xc8_pic16f1704/debug\PIC_IR_to_RF_MICRF113_test.debug.cmf -z \
+  -Q16F1704 -oC:\Users\DWHITF~1.TDY\AppData\Local\Temp\s7fs.6 \
+  -Mdist/xc8_pic16f1704/debug/PIC_IR_to_RF_MICRF113_test.debug.map -E1 \
+  -ver=XC8 -ASTACK=02066h-0215fh -pstack=STACK -ACODE=00h-07FFhx2 \
   -ASTRCODE=00h-0FFFh -ASTRING=00h-0FFhx16 -ACONST=00h-0FFhx16 \
   -AENTRY=00h-0FFhx16 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
   -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh -ABANK3=01A0h-01EFh \
@@ -29,8 +29,8 @@ Linker command line:
   -ppowerup=CODE -pcinit=CODE -pfunctab=CODE -ACONFIG=08007h-08008h \
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\DWHITF~1.TDY\AppData\Local\Temp\s7uk.obj \
-  dist/xc8_pic16f1704/production\PIC_IR_to_RF_MICRF113_test.production.obj 
+  C:\Users\DWHITF~1.TDY\AppData\Local\Temp\s7fs.obj \
+  dist/xc8_pic16f1704/debug\PIC_IR_to_RF_MICRF113_test.debug.obj 
 
 Object code version is 3.11
 
@@ -39,11 +39,11 @@ Machine type is 16F1704
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\DWHITF~1.TDY\AppData\Local\Temp\s7uk.obj
+C:\Users\DWHITF~1.TDY\AppData\Local\Temp\s7fs.obj
                 end_init                            1E4      1E4        2        8       0
-                reset_vec                             0        0        2        0       0
+                reset_vec                             0        0        3        0       0
                 config                             8007     8007        2    1000E       0
-dist/xc8_pic16f1704/production\PIC_IR_to_RF_MICRF113_test.production.obj
+dist/xc8_pic16f1704/debug\PIC_IR_to_RF_MICRF113_test.debug.obj
                 cinit                               1E6      1E6       39        8       0
                 intentry                              4        4      1E0        8       0
                 text32                              21F      21F      26E        8       0
@@ -98,7 +98,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                            1E4      1E4        2         0
                 cinit                               1E6      1E6       39         0
                 intentry                              4        4      1E0         0
-                reset_vec                             0        0        2         0
+                reset_vec                             0        0        3         0
                 text32                              21F      21F      26E         0
                 text31                              74D      74D        5         0
                 text30                              76E      76E        3         0
@@ -304,7 +304,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
-                reset_vec                      000000  000002  000002         0       0  CODE        2
+                reset_vec                      000000  000003  000003         0       0  CODE        2
                 intentry                       000004  000680  000684         8       0  CODE        2
                 bssBANK0                       000020  00003F  00005F        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
@@ -323,13 +323,13 @@ UNUSED ADDRESS RANGES
         BANK3            001A0-001EF              50           1
         BANK4            00220-0023F              20           1
         BIGRAM           02000-021EF             1F0           1
-        CODE             00002-00003               2           2
+        CODE             00003-00003               1           2
                          00684-006FF              7C
                          00771-00FFF              8F
-        CONST            00002-00003               2           2
+        CONST            00003-00003               1           2
                          00684-006FF              7C
                          00771-00FFF             100
-        ENTRY            00002-00003               2           2
+        ENTRY            00003-00003               1           2
                          00684-006FF              7C
                          00771-00FFF             100
         IDLOC            08000-08003               4           2
@@ -371,10 +371,10 @@ UNUSED ADDRESS RANGES
         SFR8             00400-0046F              70           1
         SFR9             00480-004EF              70           1
         STACK            02066-0215F              FA           1
-        STRCODE          00002-00003               2           2
+        STRCODE          00003-00003               1           2
                          00684-006FF              7C
                          00771-00FFF             88F
-        STRING           00002-00003               2           2
+        STRING           00003-00003               1           2
                          00684-006FF              7C
                          00771-00FFF             100
 
@@ -542,7 +542,7 @@ __Hintentry                   intentry     001E4
 __Hmaintext                   maintext     00000
 __Hpowerup                    powerup      00000
 __Hram                        ram          00000
-__Hreset_vec                  reset_vec    00002
+__Hreset_vec                  reset_vec    00003
 __Hsfr0                       sfr0         00000
 __Hsfr1                       sfr1         00000
 __Hsfr10                      sfr10        00000

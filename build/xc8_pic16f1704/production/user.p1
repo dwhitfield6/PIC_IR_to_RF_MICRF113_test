@@ -19,6 +19,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SLRCONCbits `VS289 ~T0 @X0 0 e@782 ]
 "1907
 [v _LATC `Vuc ~T0 @X0 0 e@270 ]
+"2884
+[s S149 :1 `uc 1 :1 `uc 1 ]
+[n S149 . . VREGPM ]
+"2883
+[u S148 `S149 1 ]
+[n S148 . . ]
+"2889
+[v _VREGCONbits `VS148 ~T0 @X0 0 e@407 ]
 "343
 [s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S27 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
@@ -4714,51 +4722,61 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 202: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
 [; ;stdio.h: 206: extern int sprintf(char *, const char *, ...);
 [; ;stdio.h: 207: extern int printf(const char *, ...);
-[; ;user.h: 90: void InitApp(void);
-[; ;user.h: 91: void Init_System (void);
-[; ;user.c: 42: extern const unsigned char Version[];
-"53 user.c
+[; ;user.h: 98: extern unsigned long SleepTimer;
+[; ;user.h: 104: void InitApp(void);
+[; ;user.h: 105: void Init_System (void);
+"43 user.c
+[v _SleepTimer `ul ~T0 @X0 1 e ]
+[i _SleepTimer
+-> -> -> 0 `i `l `ul
+]
+[; ;user.c: 43: unsigned long SleepTimer = 0;
+[; ;user.c: 44: extern const unsigned char Version[];
+"55
 [v _InitApp `(v ~T0 @X0 1 ef ]
-"54
+"56
 {
-[; ;user.c: 53: void InitApp(void)
-[; ;user.c: 54: {
+[; ;user.c: 55: void InitApp(void)
+[; ;user.c: 56: {
 [e :U _InitApp ]
 [f ]
-[; ;user.c: 55: TRISCbits.TRISC0 = 0;
-"55
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-[; ;user.c: 56: TRISCbits.TRISC1 = 0;
-"56
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;user.c: 57: TRISCbits.TRISC2 = 0;
+[; ;user.c: 57: TRISCbits.TRISC0 = 0;
 "57
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-[; ;user.c: 58: TRISCbits.TRISC3 = 0;
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+[; ;user.c: 58: TRISCbits.TRISC1 = 0;
 "58
-[e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
-[; ;user.c: 60: TRISCbits.TRISC5 = 1;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;user.c: 59: TRISCbits.TRISC2 = 0;
+"59
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+[; ;user.c: 60: TRISCbits.TRISC3 = 0;
 "60
-[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
-[; ;user.c: 61: TRISCbits.TRISC4 = 1;
-"61
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-[; ;user.c: 62: ANSELC = 0;
+[e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
+[; ;user.c: 62: TRISCbits.TRISC5 = 1;
 "62
-[e = _ANSELC -> -> 0 `i `uc ]
-[; ;user.c: 63: SLRCONCbits.SLRC3 = 0;
+[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+[; ;user.c: 63: TRISCbits.TRISC4 = 1;
 "63
-[e = . . _SLRCONCbits 0 3 -> -> 0 `i `uc ]
-[; ;user.c: 64: LATC =0;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 64: ANSELC = 0;
 "64
+[e = _ANSELC -> -> 0 `i `uc ]
+[; ;user.c: 65: SLRCONCbits.SLRC3 = 0;
+"65
+[e = . . _SLRCONCbits 0 3 -> -> 0 `i `uc ]
+[; ;user.c: 66: LATC =0;
+"66
 [e = _LATC -> -> 0 `i `uc ]
-[; ;user.c: 67: INTCONbits.PEIE = 1;
-"67
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;user.c: 68: INTCONbits.GIE = 1;
+[; ;user.c: 68: VREGCONbits.VREGPM = 1;
 "68
+[e = . . _VREGCONbits 0 1 -> -> 1 `i `uc ]
+[; ;user.c: 71: INTCONbits.PEIE = 1;
+"71
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;user.c: 72: INTCONbits.GIE = 1;
+"72
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;user.c: 69: }
-"69
+[; ;user.c: 73: }
+"73
 [e :UE 586 ]
 }

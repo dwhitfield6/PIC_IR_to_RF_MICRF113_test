@@ -53,7 +53,7 @@
 
 volatile unsigned int TMR1_overflow = 0;
 volatile unsigned int TMR4_overflow = 0;
-
+volatile unsigned char LEDsdone;
 /******************************************************************************/
 /* ISR                                                                */
 /******************************************************************************/
@@ -249,6 +249,7 @@ void interrupt isr(void)
         #else
         Stop_Timer1();
         IR_New_Code = 0;
+        IR_NEC = 0;
         IRrawCodeNum = 0;
         #endif
         PIR1bits.TMR1IF = 0;
@@ -318,6 +319,7 @@ void interrupt isr(void)
             }
             IRrawCodeNum = 0;
             TMR1_overflow = 0;
+            IRreceived = TRUE;
         }
 
         /* enable negative edge interrupt */
@@ -352,6 +354,7 @@ void interrupt isr(void)
         /* This is the timeout of the wait period for the LEDs */
         Timer6OFF();
         LATC &= ~(BiGreen + BiRed + Red);
+        LEDsdone = TRUE;
     }
     else
     {
@@ -361,5 +364,7 @@ void interrupt isr(void)
     INTCONbits.GIE = 1;
 }
 #endif
-
+/*-----------------------------------------------------------------------------/
+ End of File
+/-----------------------------------------------------------------------------*/
 

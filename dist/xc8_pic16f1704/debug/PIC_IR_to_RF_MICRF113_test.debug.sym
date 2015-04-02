@@ -421,7 +421,7 @@ __end_of_Timer2OFF 732 0 CODE 0
 _Stop_Timer1 762 0 CODE 0
 delayUS@US 56 0 BANK0 1
 IRrawToNEC@NEC 72 0 COMMON 1
-__Hreset_vec 2 0 CODE 0
+__Hreset_vec 3 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 _Enable_IR 75A 0 CODE 0
 __size_of_Timer2ON 0 0 ABS 0
@@ -468,7 +468,7 @@ delayUS@i AC 0 BANK1 1
 delayUS@j B0 0 BANK1 1
 _ConfigureOscillator 62F 0 CODE 0
 %segments
-reset_vec 0 3 CODE 0 0
+reset_vec 0 5 CODE 0 0
 intentry 8 D07 CODE 8 0
 config 1000E 10011 CONFIG 1000E 0
 cstackCOMMON 70 7D COMMON 70 1
@@ -477,8 +477,8 @@ dataBANK1 A0 B5 BANK1 A0 1
 stringtext E00 E11 STRCODE E00 0
 text4 E12 EE1 CODE E12 0
 %locals
-dist/xc8_pic16f1704/production\PIC_IR_to_RF_MICRF113_test.production.obj
-C:\Users\DWHITF~1.TDY\AppData\Local\Temp\s7uk.
+dist/xc8_pic16f1704/debug\PIC_IR_to_RF_MICRF113_test.debug.obj
+C:\Users\DWHITF~1.TDY\AppData\Local\Temp\s7fs.
 4460 1E6 0 CODE 0
 4463 1E6 0 CODE 0
 4564 1E6 0 CODE 0

@@ -6311,14 +6311,18 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 90 "user.h"
+# 98 "user.h"
+extern unsigned long SleepTimer;
+
+# 104
 void InitApp(void);
 void Init_System (void);
 
-# 42 "user.c"
+# 43 "user.c"
+unsigned long SleepTimer = 0;
 extern const unsigned char Version[];
 
-# 53
+# 55
 void InitApp(void)
 {
 TRISCbits.TRISC0 = 0;
@@ -6331,6 +6335,8 @@ TRISCbits.TRISC4 = 1;
 ANSELC = 0;
 SLRCONCbits.SLRC3 = 0;
 LATC =0;
+
+VREGCONbits.VREGPM = 1;
 
 
 INTCONbits.PEIE = 1;

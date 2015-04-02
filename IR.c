@@ -52,6 +52,8 @@ unsigned long IR_NEC;
 unsigned int IRrawCount = 0;
 unsigned char IRrawCodeNum = 0;
 unsigned char IR_New_Code  = 0;
+volatile unsigned char LEDsdone = TRUE;
+volatile unsigned char IRreceived = FALSE;
 
 /******************************************************************************/
 /* Functions                                                                  */
@@ -284,15 +286,18 @@ void UseIRCode(unsigned char* Code, unsigned long NEC)
     if(*Code == 2)
     {
         LATC |= Red;
+        LEDsdone = FALSE;
     }
     if(NEC == 0x1CE350AF)
     {
         LATC |= BiGreen;
+        LEDsdone = FALSE;
         SendRF(ChannelF, 12, 10);
     }
     else
     {
         LATC |= BiRed;
+        LEDsdone = FALSE;
     }
     while(!Sent);
     Set_Timer6(LEDtimeout);

@@ -165,6 +165,8 @@ extern unsigned long IR_NEC;
 extern unsigned int IRrawCount;
 extern unsigned char IRrawCodeNum;
 extern unsigned char IR_New_Code;
+extern volatile unsigned char LEDsdone;
+extern volatile unsigned char IRreceived;
 
 /******************************************************************************/
 /* Function prototypes                                                        */

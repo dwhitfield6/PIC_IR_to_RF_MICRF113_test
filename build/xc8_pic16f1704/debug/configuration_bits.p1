@@ -1,10 +1,4 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"885 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16f1704.h
-[v _TMR2 `Vuc ~T0 @X0 0 e@26 ]
-"904
-[v _PR2 `Vuc ~T0 @X0 0 e@27 ]
-"57 Timer.h
-[v _Timer2ON `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f1704.h: 49: extern volatile unsigned char INDF0 @ 0x000;
@@ -4627,289 +4621,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 184: extern unsigned char __resetbits;
 [; ;pic.h: 185: extern __bit __powerdown;
 [; ;pic.h: 186: extern __bit __timeout;
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;user.h: 98: extern unsigned long SleepTimer;
-[; ;user.h: 104: void InitApp(void);
-[; ;user.h: 105: void Init_System (void);
-"51 RF.h
-[v _ChannelF `uc ~T0 @X0 -> 0 `x e ]
-[i _ChannelF
-:U ..
--> -> 3 `i `uc
--> -> 0 `i `uc
--> -> 3 `i `uc
--> -> 3 `i `uc
--> -> 3 `i `uc
--> -> 3 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-]
-[; ;RF.h: 51: unsigned char ChannelF[] = {3,0,3,3,3,3,0,0,1,0,0,0};
-[; ;RF.h: 107: extern unsigned char RFsendCode[20];
-[; ;RF.h: 108: extern volatile unsigned char RFsendFlag;
-[; ;RF.h: 109: extern unsigned char RFcodePlace;
-[; ;RF.h: 110: extern unsigned char RFcodeBit;
-[; ;RF.h: 111: extern volatile unsigned char Sendcount;
-"112
-[v _Sent `Vuc ~T0 @X0 1 e ]
-[; ;RF.h: 112: volatile unsigned char Sent;
-[; ;RF.h: 118: unsigned char SendRF(unsigned char* Code, unsigned char size, unsigned char RepeatAmount);
-[; ;RF.h: 119: void SendRF_wait(unsigned char* Code, unsigned char size, unsigned char amount);
-[; ;RF.h: 120: unsigned char GetRFstatus(void);
-[; ;Timer.h: 55: void init_Timers(void);
-[; ;Timer.h: 56: void Timer2Init(void);
-[; ;Timer.h: 57: void Timer2ON(void);
-[; ;Timer.h: 58: void Timer2OFF(void);
-[; ;Timer.h: 59: void Timer1Init(void);
-[; ;Timer.h: 60: void Stop_Timer1(void);
-[; ;Timer.h: 61: void Start_Timer1(void);
-[; ;Timer.h: 62: void Reset_Timer1(void);
-[; ;Timer.h: 63: void Timer4Init(void);
-[; ;Timer.h: 64: void Timer4ON(void);
-[; ;Timer.h: 65: void Timer4OFF(void);
-[; ;Timer.h: 66: void Timer4Reset(void);
-[; ;Timer.h: 67: void Set_Timer4(unsigned char time);
-[; ;Timer.h: 68: void Timer6Init(void);
-[; ;Timer.h: 69: void Timer6ON(void);
-[; ;Timer.h: 70: void Timer6OFF(void);
-[; ;Timer.h: 71: void Timer6Reset(void);
-[; ;Timer.h: 72: void Set_Timer6(unsigned char time);
-[; ;system.h: 61: void ConfigureOscillator(void);
-[; ;MISC.h: 63: void delayUS(long US);
-[; ;MISC.h: 64: void cleanBuffer(unsigned char* data, int count);
-[; ;MISC.h: 65: void cleanBuffer16bit(unsigned int* data, int count);
-[; ;IR.h: 162: extern unsigned int BlueLEDcount;
-[; ;IR.h: 163: extern unsigned int IRRawCode[72];
-[; ;IR.h: 164: extern unsigned long IR_NEC;
-[; ;IR.h: 165: extern unsigned int IRrawCount;
-[; ;IR.h: 166: extern unsigned char IRrawCodeNum;
-[; ;IR.h: 167: extern unsigned char IR_New_Code;
-[; ;IR.h: 168: extern volatile unsigned char LEDsdone;
-[; ;IR.h: 169: extern volatile unsigned char IRreceived;
-[; ;IR.h: 175: void init_IR(void);
-[; ;IR.h: 176: unsigned char ReadIRpin(void);
-[; ;IR.h: 177: unsigned char IRrawToNEC(unsigned int* Raw, unsigned long* NEC, unsigned char Invert);
-[; ;IR.h: 178: void UseIRCode(unsigned char* Code, unsigned long NEC);
-[; ;IR.h: 179: void Disable_IR(void);
-[; ;IR.h: 180: void Enable_IR(void);
-"39 RF.c
-[v _RFsendCode `uc ~T0 @X0 -> 20 `i e ]
-[; ;RF.c: 39: unsigned char RFsendCode[20];
+"28 configuration_bits.c
+[p x FOSC=INTOSC ]
+"29
+[p x WDTE=OFF ]
+"30
+[p x PWRTE=OFF ]
+"31
+[p x MCLRE=ON ]
+"32
+[p x CP=OFF ]
+"33
+[p x BOREN=ON ]
+"34
+[p x CLKOUTEN=OFF ]
+"35
+[p x IESO=OFF ]
+"36
+[p x FCMEN=OFF ]
+"39
+[p x WRT=OFF ]
 "40
-[v _RFsendFlag `Vuc ~T0 @X0 1 e ]
-[i _RFsendFlag
--> -> 0 `i `uc
-]
-[; ;RF.c: 40: volatile unsigned char RFsendFlag = 0;
+[p x PPS1WAY=OFF ]
 "41
-[v _RFcodePlace `uc ~T0 @X0 1 e ]
-[i _RFcodePlace
--> -> 0 `i `uc
-]
-[; ;RF.c: 41: unsigned char RFcodePlace = 0;
+[p x ZCDDIS=ON ]
 "42
-[v _RFcodeBit `uc ~T0 @X0 1 e ]
-[i _RFcodeBit
--> -> 0 `i `uc
-]
-[; ;RF.c: 42: unsigned char RFcodeBit = 0;
+[p x PLLEN=OFF ]
 "43
-[v _Sendcount `Vuc ~T0 @X0 1 e ]
-[i _Sendcount
--> -> 0 `i `uc
-]
-[; ;RF.c: 43: volatile unsigned char Sendcount =0;
-"112 RF.h
-[i _Sent
-"44 RF.c
--> -> 1 `i `uc
-]
-[; ;RF.c: 44: volatile unsigned char Sent = 1;
-"56
-[v _SendRF `(uc ~T0 @X0 1 ef3`*uc`uc`uc ]
-"57
-{
-[; ;RF.c: 56: unsigned char SendRF(unsigned char* Code, unsigned char size, unsigned char RepeatAmount)
-[; ;RF.c: 57: {
-[e :U _SendRF ]
-"56
-[v _Code `*uc ~T0 @X0 1 r1 ]
-[v _size `uc ~T0 @X0 1 r2 ]
-[v _RepeatAmount `uc ~T0 @X0 1 r3 ]
-"57
-[f ]
-"58
-[v _i `uc ~T0 @X0 1 a ]
-[; ;RF.c: 58: unsigned char i;
-[; ;RF.c: 59: if(Sent == 1)
-"59
-[e $ ! == -> _Sent `i -> 1 `i 586  ]
-[; ;RF.c: 60: {
-"60
-{
-[; ;RF.c: 62: Sent = 0;
-"62
-[e = _Sent -> -> 0 `i `uc ]
-[; ;RF.c: 63: Sendcount = RepeatAmount;
-"63
-[e = _Sendcount _RepeatAmount ]
-[; ;RF.c: 64: RFsendFlag = 1;
-"64
-[e = _RFsendFlag -> -> 1 `i `uc ]
-[; ;RF.c: 65: RFcodeBit = 0;
-"65
-[e = _RFcodeBit -> -> 0 `i `uc ]
-[; ;RF.c: 66: RFcodePlace = 1;
-"66
-[e = _RFcodePlace -> -> 1 `i `uc ]
-[; ;RF.c: 69: if(size >= 20)
-"69
-[e $ ! >= -> _size `i -> 20 `i 587  ]
-[; ;RF.c: 70: {
-"70
-{
-[; ;RF.c: 71: return 0;
-"71
-[e ) -> -> 0 `i `uc ]
-[e $UE 585  ]
-"72
-}
-[e :U 587 ]
-[; ;RF.c: 72: }
-[; ;RF.c: 73: for(i=0;i<size;i++)
-"73
-{
-[e = _i -> -> 0 `i `uc ]
-[e $U 591  ]
-"74
-[e :U 588 ]
-[; ;RF.c: 74: {
-{
-[; ;RF.c: 75: RFsendCode[i] = Code[i];
-"75
-[e = *U + &U _RFsendCode * -> _i `ux -> -> # *U &U _RFsendCode `ui `ux *U + _Code * -> _i `ux -> -> # *U _Code `ui `ux ]
-"76
-}
-"73
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 591 ]
-[e $ < -> _i `i -> _size `i 588  ]
-[e :U 589 ]
-"76
-}
-[; ;RF.c: 76: }
-[; ;RF.c: 77: RFsendCode[i] = 99;
-"77
-[e = *U + &U _RFsendCode * -> _i `ux -> -> # *U &U _RFsendCode `ui `ux -> -> 99 `i `uc ]
-[; ;RF.c: 79: TMR2 = 0;
-"79
-[e = _TMR2 -> -> 0 `i `uc ]
-[; ;RF.c: 80: (PR2 = 240);
-"80
-[e = _PR2 -> -> 240 `i `uc ]
-[; ;RF.c: 81: Timer2ON();
-"81
-[e ( _Timer2ON ..  ]
-[; ;RF.c: 82: return 1;
-"82
-[e ) -> -> 1 `i `uc ]
-[e $UE 585  ]
-"83
-}
-[e :U 586 ]
-[; ;RF.c: 83: }
-[; ;RF.c: 84: return 2;
-"84
-[e ) -> -> 2 `i `uc ]
-[e $UE 585  ]
-[; ;RF.c: 85: }
-"85
-[e :UE 585 ]
-}
-"92
-[v _GetRFstatus `(uc ~T0 @X0 1 ef ]
-"93
-{
-[; ;RF.c: 92: unsigned char GetRFstatus(void)
-[; ;RF.c: 93: {
-[e :U _GetRFstatus ]
-[f ]
-[; ;RF.c: 94: if(!RFsendFlag)
-"94
-[e $ ! ! != -> _RFsendFlag `i -> -> -> 0 `i `Vuc `i 593  ]
-[; ;RF.c: 95: {
-"95
-{
-[; ;RF.c: 96: return 1;
-"96
-[e ) -> -> 1 `i `uc ]
-[e $UE 592  ]
-"97
-}
-[e :U 593 ]
-[; ;RF.c: 97: }
-[; ;RF.c: 98: return 2;
-"98
-[e ) -> -> 2 `i `uc ]
-[e $UE 592  ]
-[; ;RF.c: 99: }
-"99
-[e :UE 592 ]
-}
-"107
-[v _SendRF_wait `(v ~T0 @X0 1 ef3`*uc`uc`uc ]
-"108
-{
-[; ;RF.c: 107: void SendRF_wait(unsigned char* Code, unsigned char size, unsigned char amount)
-[; ;RF.c: 108: {
-[e :U _SendRF_wait ]
-"107
-[v _Code `*uc ~T0 @X0 1 r1 ]
-[v _size `uc ~T0 @X0 1 r2 ]
-[v _amount `uc ~T0 @X0 1 r3 ]
-"108
-[f ]
-[; ;RF.c: 109: while(SendRF(Code, size, amount) == 2);
-"109
-[e $U 595  ]
-[e :U 596 ]
-[e :U 595 ]
-[e $ == -> ( _SendRF (3 , , _Code _size _amount `i -> 2 `i 596  ]
-[e :U 597 ]
-[; ;RF.c: 110: }
-"110
-[e :UE 594 ]
-}
+[p x STVREN=ON ]
+"44
+[p x BORV=LO ]
+"45
+[p x LPBOR=OFF ]
+"46
+[p x LVP=ON ]

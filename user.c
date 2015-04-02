@@ -6,7 +6,8 @@
  * Date         Revision    Comments
  * MM/DD/YY
  * --------     ---------   ----------------------------------------------------
- * 03/13/15     1.0_DW0a    Created.
+ * 03/17/15     1.0_DW0a    Created.
+ *                          Enable lowest power sleep mode.
 /******************************************************************************/
 
 /******************************************************************************/
@@ -39,6 +40,7 @@
 /* Global Variables                                                           */
 /******************************************************************************/
 
+unsigned long SleepTimer = 0;
 extern const unsigned char Version[];
 
 /******************************************************************************/
@@ -62,6 +64,8 @@ void InitApp(void)
     ANSELC = 0; // All port C is digital
     SLRCONCbits.SLRC3 = 0; // Maximum slew rate on RF pin
     LATC =0;
+
+    VREGCONbits.VREGPM = 1; // Lowest power sleep mode
 
     /* Turn On global Interrupts and Peripheral */
     INTCONbits.PEIE = 1;

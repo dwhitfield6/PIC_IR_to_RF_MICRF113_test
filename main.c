@@ -6,7 +6,8 @@
  * Date         Revision    Comments
  * MM/DD/YY
  * --------     ---------   ----------------------------------------------------
- * 03/13/15     1.0_DW0a    Created.
+ * 03/17/15     1.0_DW0a    Created.
+ *                          Add sleep functions.
 /******************************************************************************/
 
 /******************************************************************************/
@@ -75,6 +76,27 @@ void main(void)
             /* There was an IR code received */
             UseIRCode(&IR_New_Code,IR_NEC);
         }
+        if(Sent && LEDsdone && IRreceived)
+        {
+            if(SleepTimer > SleepTimeOut)
+            {
+                IRreceived = FALSE;
+                SLEEP();
+                NOP();
+                NOP();
+                ConfigureOscillator();
+            }
+            else
+            {
+                SleepTimer++;
+            }
+        }
+        else
+        {
+            SleepTimer = 0;
+        }
     }
 }
-
+/*-----------------------------------------------------------------------------/
+ End of File
+/-----------------------------------------------------------------------------*/

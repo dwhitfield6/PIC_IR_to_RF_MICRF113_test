@@ -1,10 +1,43 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"885 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16f1704.h
-[v _TMR2 `Vuc ~T0 @X0 0 e@26 ]
-"904
-[v _PR2 `Vuc ~T0 @X0 0 e@27 ]
-"57 Timer.h
-[v _Timer2ON `(v ~T0 @X0 0 ef ]
+"1043 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16f1704.h
+[s S62 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S62 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 ]
+"1042
+[u S61 `S62 1 ]
+[n S61 . . ]
+"1052
+[v _TRISCbits `VS61 ~T0 @X0 0 e@142 ]
+"2667
+[v _ANSELC `Vuc ~T0 @X0 0 e@398 ]
+"5852
+[s S290 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S290 . SLRC0 SLRC1 SLRC2 SLRC3 SLRC4 SLRC5 ]
+"5851
+[u S289 `S290 1 ]
+[n S289 . . ]
+"5861
+[v _SLRCONCbits `VS289 ~T0 @X0 0 e@782 ]
+"1907
+[v _LATC `Vuc ~T0 @X0 0 e@270 ]
+"2884
+[s S149 :1 `uc 1 :1 `uc 1 ]
+[n S149 . . VREGPM ]
+"2883
+[u S148 `S149 1 ]
+[n S148 . . ]
+"2889
+[v _VREGCONbits `VS148 ~T0 @X0 0 e@407 ]
+"343
+[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S27 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"353
+[s S28 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S28 . . T0IF . T0IE ]
+"342
+[u S26 `S27 1 `S28 1 ]
+[n S26 . . . ]
+"360
+[v _INTCONbits `VS26 ~T0 @X0 0 e@11 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f1704.h: 49: extern volatile unsigned char INDF0 @ 0x000;
@@ -4656,260 +4689,94 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;stdio.h: 8: typedef int ptrdiff_t;
+[; ;stdio.h: 9: typedef unsigned size_t;
+[; ;stdio.h: 10: typedef unsigned short wchar_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 24: extern int errno;
+[; ;stdio.h: 55: struct __prbuf
+[; ;stdio.h: 56: {
+[; ;stdio.h: 57: char * ptr;
+[; ;stdio.h: 58: void (* func)(char);
+[; ;stdio.h: 59: };
+[; ;conio.h: 17: extern int errno;
+[; ;conio.h: 20: extern void init_uart(void);
+[; ;conio.h: 22: extern char getch(void);
+[; ;conio.h: 23: extern char getche(void);
+[; ;conio.h: 24: extern void putch(char);
+[; ;conio.h: 25: extern void ungetch(char);
+[; ;conio.h: 27: extern __bit kbhit(void);
+[; ;conio.h: 31: extern char * cgets(char *);
+[; ;conio.h: 32: extern void cputs(const char *);
+[; ;stdio.h: 100: extern int cprintf(char *, ...);
+[; ;stdio.h: 105: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 195: extern char * gets(char *);
+[; ;stdio.h: 196: extern int puts(const char *);
+[; ;stdio.h: 197: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 198: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 199: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 200: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 201: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 202: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 206: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 207: extern int printf(const char *, ...);
 [; ;user.h: 98: extern unsigned long SleepTimer;
 [; ;user.h: 104: void InitApp(void);
 [; ;user.h: 105: void Init_System (void);
-"51 RF.h
-[v _ChannelF `uc ~T0 @X0 -> 0 `x e ]
-[i _ChannelF
-:U ..
--> -> 3 `i `uc
--> -> 0 `i `uc
--> -> 3 `i `uc
--> -> 3 `i `uc
--> -> 3 `i `uc
--> -> 3 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
+"43 user.c
+[v _SleepTimer `ul ~T0 @X0 1 e ]
+[i _SleepTimer
+-> -> -> 0 `i `l `ul
 ]
-[; ;RF.h: 51: unsigned char ChannelF[] = {3,0,3,3,3,3,0,0,1,0,0,0};
-[; ;RF.h: 107: extern unsigned char RFsendCode[20];
-[; ;RF.h: 108: extern volatile unsigned char RFsendFlag;
-[; ;RF.h: 109: extern unsigned char RFcodePlace;
-[; ;RF.h: 110: extern unsigned char RFcodeBit;
-[; ;RF.h: 111: extern volatile unsigned char Sendcount;
-"112
-[v _Sent `Vuc ~T0 @X0 1 e ]
-[; ;RF.h: 112: volatile unsigned char Sent;
-[; ;RF.h: 118: unsigned char SendRF(unsigned char* Code, unsigned char size, unsigned char RepeatAmount);
-[; ;RF.h: 119: void SendRF_wait(unsigned char* Code, unsigned char size, unsigned char amount);
-[; ;RF.h: 120: unsigned char GetRFstatus(void);
-[; ;Timer.h: 55: void init_Timers(void);
-[; ;Timer.h: 56: void Timer2Init(void);
-[; ;Timer.h: 57: void Timer2ON(void);
-[; ;Timer.h: 58: void Timer2OFF(void);
-[; ;Timer.h: 59: void Timer1Init(void);
-[; ;Timer.h: 60: void Stop_Timer1(void);
-[; ;Timer.h: 61: void Start_Timer1(void);
-[; ;Timer.h: 62: void Reset_Timer1(void);
-[; ;Timer.h: 63: void Timer4Init(void);
-[; ;Timer.h: 64: void Timer4ON(void);
-[; ;Timer.h: 65: void Timer4OFF(void);
-[; ;Timer.h: 66: void Timer4Reset(void);
-[; ;Timer.h: 67: void Set_Timer4(unsigned char time);
-[; ;Timer.h: 68: void Timer6Init(void);
-[; ;Timer.h: 69: void Timer6ON(void);
-[; ;Timer.h: 70: void Timer6OFF(void);
-[; ;Timer.h: 71: void Timer6Reset(void);
-[; ;Timer.h: 72: void Set_Timer6(unsigned char time);
-[; ;system.h: 61: void ConfigureOscillator(void);
-[; ;MISC.h: 63: void delayUS(long US);
-[; ;MISC.h: 64: void cleanBuffer(unsigned char* data, int count);
-[; ;MISC.h: 65: void cleanBuffer16bit(unsigned int* data, int count);
-[; ;IR.h: 162: extern unsigned int BlueLEDcount;
-[; ;IR.h: 163: extern unsigned int IRRawCode[72];
-[; ;IR.h: 164: extern unsigned long IR_NEC;
-[; ;IR.h: 165: extern unsigned int IRrawCount;
-[; ;IR.h: 166: extern unsigned char IRrawCodeNum;
-[; ;IR.h: 167: extern unsigned char IR_New_Code;
-[; ;IR.h: 168: extern volatile unsigned char LEDsdone;
-[; ;IR.h: 169: extern volatile unsigned char IRreceived;
-[; ;IR.h: 175: void init_IR(void);
-[; ;IR.h: 176: unsigned char ReadIRpin(void);
-[; ;IR.h: 177: unsigned char IRrawToNEC(unsigned int* Raw, unsigned long* NEC, unsigned char Invert);
-[; ;IR.h: 178: void UseIRCode(unsigned char* Code, unsigned long NEC);
-[; ;IR.h: 179: void Disable_IR(void);
-[; ;IR.h: 180: void Enable_IR(void);
-"39 RF.c
-[v _RFsendCode `uc ~T0 @X0 -> 20 `i e ]
-[; ;RF.c: 39: unsigned char RFsendCode[20];
-"40
-[v _RFsendFlag `Vuc ~T0 @X0 1 e ]
-[i _RFsendFlag
--> -> 0 `i `uc
-]
-[; ;RF.c: 40: volatile unsigned char RFsendFlag = 0;
-"41
-[v _RFcodePlace `uc ~T0 @X0 1 e ]
-[i _RFcodePlace
--> -> 0 `i `uc
-]
-[; ;RF.c: 41: unsigned char RFcodePlace = 0;
-"42
-[v _RFcodeBit `uc ~T0 @X0 1 e ]
-[i _RFcodeBit
--> -> 0 `i `uc
-]
-[; ;RF.c: 42: unsigned char RFcodeBit = 0;
-"43
-[v _Sendcount `Vuc ~T0 @X0 1 e ]
-[i _Sendcount
--> -> 0 `i `uc
-]
-[; ;RF.c: 43: volatile unsigned char Sendcount =0;
-"112 RF.h
-[i _Sent
-"44 RF.c
--> -> 1 `i `uc
-]
-[; ;RF.c: 44: volatile unsigned char Sent = 1;
+[; ;user.c: 43: unsigned long SleepTimer = 0;
+[; ;user.c: 44: extern const unsigned char Version[];
+"55
+[v _InitApp `(v ~T0 @X0 1 ef ]
 "56
-[v _SendRF `(uc ~T0 @X0 1 ef3`*uc`uc`uc ]
-"57
 {
-[; ;RF.c: 56: unsigned char SendRF(unsigned char* Code, unsigned char size, unsigned char RepeatAmount)
-[; ;RF.c: 57: {
-[e :U _SendRF ]
-"56
-[v _Code `*uc ~T0 @X0 1 r1 ]
-[v _size `uc ~T0 @X0 1 r2 ]
-[v _RepeatAmount `uc ~T0 @X0 1 r3 ]
-"57
+[; ;user.c: 55: void InitApp(void)
+[; ;user.c: 56: {
+[e :U _InitApp ]
 [f ]
+[; ;user.c: 57: TRISCbits.TRISC0 = 0;
+"57
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+[; ;user.c: 58: TRISCbits.TRISC1 = 0;
 "58
-[v _i `uc ~T0 @X0 1 a ]
-[; ;RF.c: 58: unsigned char i;
-[; ;RF.c: 59: if(Sent == 1)
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;user.c: 59: TRISCbits.TRISC2 = 0;
 "59
-[e $ ! == -> _Sent `i -> 1 `i 586  ]
-[; ;RF.c: 60: {
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+[; ;user.c: 60: TRISCbits.TRISC3 = 0;
 "60
-{
-[; ;RF.c: 62: Sent = 0;
+[e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
+[; ;user.c: 62: TRISCbits.TRISC5 = 1;
 "62
-[e = _Sent -> -> 0 `i `uc ]
-[; ;RF.c: 63: Sendcount = RepeatAmount;
+[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+[; ;user.c: 63: TRISCbits.TRISC4 = 1;
 "63
-[e = _Sendcount _RepeatAmount ]
-[; ;RF.c: 64: RFsendFlag = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 64: ANSELC = 0;
 "64
-[e = _RFsendFlag -> -> 1 `i `uc ]
-[; ;RF.c: 65: RFcodeBit = 0;
+[e = _ANSELC -> -> 0 `i `uc ]
+[; ;user.c: 65: SLRCONCbits.SLRC3 = 0;
 "65
-[e = _RFcodeBit -> -> 0 `i `uc ]
-[; ;RF.c: 66: RFcodePlace = 1;
+[e = . . _SLRCONCbits 0 3 -> -> 0 `i `uc ]
+[; ;user.c: 66: LATC =0;
 "66
-[e = _RFcodePlace -> -> 1 `i `uc ]
-[; ;RF.c: 69: if(size >= 20)
-"69
-[e $ ! >= -> _size `i -> 20 `i 587  ]
-[; ;RF.c: 70: {
-"70
-{
-[; ;RF.c: 71: return 0;
+[e = _LATC -> -> 0 `i `uc ]
+[; ;user.c: 68: VREGCONbits.VREGPM = 0;
+"68
+[e = . . _VREGCONbits 0 1 -> -> 0 `i `uc ]
+[; ;user.c: 71: INTCONbits.PEIE = 1;
 "71
-[e ) -> -> 0 `i `uc ]
-[e $UE 585  ]
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;user.c: 72: INTCONbits.GIE = 1;
 "72
-}
-[e :U 587 ]
-[; ;RF.c: 72: }
-[; ;RF.c: 73: for(i=0;i<size;i++)
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;user.c: 73: }
 "73
-{
-[e = _i -> -> 0 `i `uc ]
-[e $U 591  ]
-"74
-[e :U 588 ]
-[; ;RF.c: 74: {
-{
-[; ;RF.c: 75: RFsendCode[i] = Code[i];
-"75
-[e = *U + &U _RFsendCode * -> _i `ux -> -> # *U &U _RFsendCode `ui `ux *U + _Code * -> _i `ux -> -> # *U _Code `ui `ux ]
-"76
-}
-"73
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 591 ]
-[e $ < -> _i `i -> _size `i 588  ]
-[e :U 589 ]
-"76
-}
-[; ;RF.c: 76: }
-[; ;RF.c: 77: RFsendCode[i] = 99;
-"77
-[e = *U + &U _RFsendCode * -> _i `ux -> -> # *U &U _RFsendCode `ui `ux -> -> 99 `i `uc ]
-[; ;RF.c: 79: TMR2 = 0;
-"79
-[e = _TMR2 -> -> 0 `i `uc ]
-[; ;RF.c: 80: (PR2 = 240);
-"80
-[e = _PR2 -> -> 240 `i `uc ]
-[; ;RF.c: 81: Timer2ON();
-"81
-[e ( _Timer2ON ..  ]
-[; ;RF.c: 82: return 1;
-"82
-[e ) -> -> 1 `i `uc ]
-[e $UE 585  ]
-"83
-}
-[e :U 586 ]
-[; ;RF.c: 83: }
-[; ;RF.c: 84: return 2;
-"84
-[e ) -> -> 2 `i `uc ]
-[e $UE 585  ]
-[; ;RF.c: 85: }
-"85
-[e :UE 585 ]
-}
-"92
-[v _GetRFstatus `(uc ~T0 @X0 1 ef ]
-"93
-{
-[; ;RF.c: 92: unsigned char GetRFstatus(void)
-[; ;RF.c: 93: {
-[e :U _GetRFstatus ]
-[f ]
-[; ;RF.c: 94: if(!RFsendFlag)
-"94
-[e $ ! ! != -> _RFsendFlag `i -> -> -> 0 `i `Vuc `i 593  ]
-[; ;RF.c: 95: {
-"95
-{
-[; ;RF.c: 96: return 1;
-"96
-[e ) -> -> 1 `i `uc ]
-[e $UE 592  ]
-"97
-}
-[e :U 593 ]
-[; ;RF.c: 97: }
-[; ;RF.c: 98: return 2;
-"98
-[e ) -> -> 2 `i `uc ]
-[e $UE 592  ]
-[; ;RF.c: 99: }
-"99
-[e :UE 592 ]
-}
-"107
-[v _SendRF_wait `(v ~T0 @X0 1 ef3`*uc`uc`uc ]
-"108
-{
-[; ;RF.c: 107: void SendRF_wait(unsigned char* Code, unsigned char size, unsigned char amount)
-[; ;RF.c: 108: {
-[e :U _SendRF_wait ]
-"107
-[v _Code `*uc ~T0 @X0 1 r1 ]
-[v _size `uc ~T0 @X0 1 r2 ]
-[v _amount `uc ~T0 @X0 1 r3 ]
-"108
-[f ]
-[; ;RF.c: 109: while(SendRF(Code, size, amount) == 2);
-"109
-[e $U 595  ]
-[e :U 596 ]
-[e :U 595 ]
-[e $ == -> ( _SendRF (3 , , _Code _size _amount `i -> 2 `i 596  ]
-[e :U 597 ]
-[; ;RF.c: 110: }
-"110
-[e :UE 594 ]
+[e :UE 586 ]
 }
