@@ -6,6 +6,8 @@
  * Date         Revision    Comments
  * MM/DD/YY
  * --------     ---------   ----------------------------------------------------
+ * 10/21/15     6.0_DW0a    Changed version number to match new scheme.
+ *                          Fixed ISR bug.
  * 03/17/15     1.0_DW0a    Created.
  *                          Add sleep functions.
 /******************************************************************************/

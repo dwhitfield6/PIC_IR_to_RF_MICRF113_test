@@ -4747,7 +4747,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;IR.h: 178: void UseIRCode(unsigned char* Code, unsigned long NEC);
 [; ;IR.h: 179: void Disable_IR(void);
 [; ;IR.h: 180: void Enable_IR(void);
-"43 main.c
+"45 main.c
 [v _Version `Cuc ~T0 @X0 -> 0 `x e ]
 [i _Version
 :U ..
@@ -4762,162 +4762,162 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;main.c: 43: const unsigned char Version[] = {"1.0_DW0a"};
-"49
+[; ;main.c: 45: const unsigned char Version[] = {"1.0_DW0a"};
+"51
 [v _main `(v ~T0 @X0 1 ef ]
-"50
+"52
 {
-[; ;main.c: 49: void main(void)
-[; ;main.c: 50: {
+[; ;main.c: 51: void main(void)
+[; ;main.c: 52: {
 [e :U _main ]
 [f ]
-"51
+"53
 [v _i `uc ~T0 @X0 1 a ]
-[; ;main.c: 51: unsigned char i=0;
+[; ;main.c: 53: unsigned char i=0;
 [e = _i -> -> 0 `i `uc ]
-[; ;main.c: 54: ConfigureOscillator();
-"54
-[e ( _ConfigureOscillator ..  ]
-[; ;main.c: 55: InitApp();
-"55
-[e ( _InitApp ..  ]
-[; ;main.c: 56: init_Timers();
+[; ;main.c: 56: ConfigureOscillator();
 "56
-[e ( _init_Timers ..  ]
-[; ;main.c: 57: init_IR();
+[e ( _ConfigureOscillator ..  ]
+[; ;main.c: 57: InitApp();
 "57
+[e ( _InitApp ..  ]
+[; ;main.c: 58: init_Timers();
+"58
+[e ( _init_Timers ..  ]
+[; ;main.c: 59: init_IR();
+"59
 [e ( _init_IR ..  ]
-[; ;main.c: 60: LATC |= 0b00000100;
-"60
+[; ;main.c: 62: LATC |= 0b00000100;
+"62
 [e =| _LATC -> -> 4 `i `uc ]
-[; ;main.c: 61: for(i =0;i<10;i++)
-"61
+[; ;main.c: 63: for(i =0;i<10;i++)
+"63
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 10 `i 586  ]
 [e $U 587  ]
-"62
-[e :U 586 ]
-[; ;main.c: 62: {
-{
-[; ;main.c: 63: LATC |= 0b00000001;
-"63
-[e =| _LATC -> -> 1 `i `uc ]
-[; ;main.c: 64: LATC &= ~0b00000010;
 "64
-[e =& _LATC -> ~ -> 2 `i `uc ]
-[; ;main.c: 65: delayUS(40000);
+[e :U 586 ]
+[; ;main.c: 64: {
+{
+[; ;main.c: 65: LATC |= 0b00000001;
 "65
-[e ( _delayUS (1 -> 40000 `l ]
-[; ;main.c: 66: LATC |= 0b00000010;
+[e =| _LATC -> -> 1 `i `uc ]
+[; ;main.c: 66: LATC &= ~0b00000010;
 "66
-[e =| _LATC -> -> 2 `i `uc ]
-[; ;main.c: 67: LATC &= ~0b00000001;
+[e =& _LATC -> ~ -> 2 `i `uc ]
+[; ;main.c: 67: delayUS(40000);
 "67
-[e =& _LATC -> ~ -> 1 `i `uc ]
-[; ;main.c: 68: delayUS(40000);
-"68
 [e ( _delayUS (1 -> 40000 `l ]
+[; ;main.c: 68: LATC |= 0b00000010;
+"68
+[e =| _LATC -> -> 2 `i `uc ]
+[; ;main.c: 69: LATC &= ~0b00000001;
 "69
+[e =& _LATC -> ~ -> 1 `i `uc ]
+[; ;main.c: 70: delayUS(40000);
+"70
+[e ( _delayUS (1 -> 40000 `l ]
+"71
 }
-"61
+"63
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 10 `i 586  ]
 [e :U 587 ]
-"69
+"71
 }
-[; ;main.c: 69: }
-[; ;main.c: 70: LATC &= ~(0b00000010 + 0b00000100);
-"70
-[e =& _LATC -> ~ + -> 2 `i -> 4 `i `uc ]
-[; ;main.c: 72: while(1)
+[; ;main.c: 71: }
+[; ;main.c: 72: LATC &= ~(0b00000010 + 0b00000100);
 "72
-[e :U 590 ]
-[; ;main.c: 73: {
-"73
-{
-[; ;main.c: 74: if(IR_New_Code)
+[e =& _LATC -> ~ + -> 2 `i -> 4 `i `uc ]
+[; ;main.c: 74: while(1)
 "74
-[e $ ! != -> _IR_New_Code `i -> -> -> 0 `i `uc `i 592  ]
+[e :U 590 ]
 [; ;main.c: 75: {
 "75
 {
-[; ;main.c: 77: UseIRCode(&IR_New_Code,IR_NEC);
+[; ;main.c: 76: if(IR_New_Code)
+"76
+[e $ ! != -> _IR_New_Code `i -> -> -> 0 `i `uc `i 592  ]
+[; ;main.c: 77: {
 "77
+{
+[; ;main.c: 79: UseIRCode(&IR_New_Code,IR_NEC);
+"79
 [e ( _UseIRCode (2 , &U _IR_New_Code _IR_NEC ]
-"78
+"80
 }
 [e :U 592 ]
-[; ;main.c: 78: }
-[; ;main.c: 79: if(Sent && LEDsdone && IRreceived)
-"79
-[e $ ! && && != -> _Sent `i -> -> -> 0 `i `Vuc `i != -> _LEDsdone `i -> -> -> 0 `i `Vuc `i != -> _IRreceived `i -> -> -> 0 `i `Vuc `i 593  ]
-[; ;main.c: 80: {
-"80
-{
-[; ;main.c: 81: if(SleepTimer > 1000)
+[; ;main.c: 80: }
+[; ;main.c: 81: if(Sent && LEDsdone && IRreceived)
 "81
-[e $ ! > _SleepTimer -> -> -> 1000 `i `l `ul 594  ]
+[e $ ! && && != -> _Sent `i -> -> -> 0 `i `Vuc `i != -> _LEDsdone `i -> -> -> 0 `i `Vuc `i != -> _IRreceived `i -> -> -> 0 `i `Vuc `i 593  ]
 [; ;main.c: 82: {
 "82
 {
-[; ;main.c: 83: IRreceived = 0;
+[; ;main.c: 83: if(SleepTimer > 1000)
 "83
-[e = _IRreceived -> -> 0 `i `uc ]
-[; ;main.c: 84: asm("sleep");
+[e $ ! > _SleepTimer -> -> -> 1000 `i `l `ul 594  ]
+[; ;main.c: 84: {
 "84
-[; <" sleep ;# ">
-[; ;main.c: 85: __nop();
-"85
-[e ( ___nop ..  ]
-[; ;main.c: 86: __nop();
-"86
-[e ( ___nop ..  ]
-[; ;main.c: 87: ConfigureOscillator();
-"87
-[e ( _ConfigureOscillator ..  ]
-"88
-}
-[; ;main.c: 88: }
-[e $U 595  ]
-"89
-[e :U 594 ]
-[; ;main.c: 89: else
-[; ;main.c: 90: {
-"90
 {
-[; ;main.c: 91: SleepTimer++;
+[; ;main.c: 85: IRreceived = 0;
+"85
+[e = _IRreceived -> -> 0 `i `uc ]
+[; ;main.c: 86: asm("sleep");
+"86
+[; <" sleep ;# ">
+[; ;main.c: 87: __nop();
+"87
+[e ( ___nop ..  ]
+[; ;main.c: 88: __nop();
+"88
+[e ( ___nop ..  ]
+[; ;main.c: 89: ConfigureOscillator();
+"89
+[e ( _ConfigureOscillator ..  ]
+"90
+}
+[; ;main.c: 90: }
+[e $U 595  ]
 "91
-[e ++ _SleepTimer -> -> -> 1 `i `l `ul ]
+[e :U 594 ]
+[; ;main.c: 91: else
+[; ;main.c: 92: {
 "92
+{
+[; ;main.c: 93: SleepTimer++;
+"93
+[e ++ _SleepTimer -> -> -> 1 `i `l `ul ]
+"94
 }
 [e :U 595 ]
-"93
-}
-[; ;main.c: 92: }
-[; ;main.c: 93: }
-[e $U 596  ]
-"94
-[e :U 593 ]
-[; ;main.c: 94: else
-[; ;main.c: 95: {
 "95
-{
-[; ;main.c: 96: SleepTimer = 0;
+}
+[; ;main.c: 94: }
+[; ;main.c: 95: }
+[e $U 596  ]
 "96
-[e = _SleepTimer -> -> -> 0 `i `l `ul ]
+[e :U 593 ]
+[; ;main.c: 96: else
+[; ;main.c: 97: {
 "97
+{
+[; ;main.c: 98: SleepTimer = 0;
+"98
+[e = _SleepTimer -> -> -> 0 `i `l `ul ]
+"99
 }
 [e :U 596 ]
-"98
+"100
 }
 [e :U 589 ]
-"72
+"74
 [e $U 590  ]
 [e :U 591 ]
-[; ;main.c: 97: }
-[; ;main.c: 98: }
 [; ;main.c: 99: }
-"99
+[; ;main.c: 100: }
+[; ;main.c: 101: }
+"101
 [e :UE 585 ]
 }

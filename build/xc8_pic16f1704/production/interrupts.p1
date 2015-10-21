@@ -112,6 +112,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _IRrawToNEC `(uc ~T0 @X0 0 ef3`*ui`*ul`uc ]
 "169
 [v _IRreceived `Vuc ~T0 @X0 0 e ]
+"1162 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16f1704.h
+[s S67 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S67 . CCP2IE TMR4IE TMR6IE BCL1IE . C1IE C2IE OSFIE ]
+"1161
+[u S66 `S67 1 ]
+[n S66 . . ]
+"1173
+[v _PIE2bits `VS66 ~T0 @X0 0 e@146 ]
 "65 Timer.h
 [v _Timer4OFF `(v ~T0 @X0 0 ef ]
 "70
@@ -4866,9 +4874,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;interrupts.c: 64: INTCONbits.GIE = 0;
 "64
 [e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-[; ;interrupts.c: 65: if(PIR1bits.TMR2IF)
+[; ;interrupts.c: 65: if(PIR1bits.TMR2IF && PIE1bits.TMR2IE)
 "65
-[e $ ! != -> . . _PIR1bits 0 1 `i -> -> -> 0 `i `Vuc `i 586  ]
+[e $ ! && != -> . . _PIR1bits 0 1 `i -> -> -> 0 `i `Vuc `i != -> . . _PIE1bits 0 1 `i -> -> -> 0 `i `Vuc `i 586  ]
 [; ;interrupts.c: 66: {
 "66
 {
@@ -5373,8 +5381,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 624  ]
 "229
 [e :U 586 ]
-[; ;interrupts.c: 229: else if(PIR1bits.TMR1IF)
-[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 625  ]
+[; ;interrupts.c: 229: else if(PIR1bits.TMR1IF && PIE1bits.TMR1IE)
+[e $ ! && != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i != -> . . _PIE1bits 0 0 `i -> -> -> 0 `i `Vuc `i 625  ]
 [; ;interrupts.c: 230: {
 "230
 {
@@ -5405,8 +5413,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 626  ]
 "257
 [e :U 625 ]
-[; ;interrupts.c: 257: else if(IOCCFbits.IOCCF4)
-[e $ ! != -> . . _IOCCFbits 0 4 `i -> -> -> 0 `i `Vuc `i 627  ]
+[; ;interrupts.c: 257: else if(IOCCFbits.IOCCF4 && INTCONbits.IOCIE)
+[e $ ! && != -> . . _IOCCFbits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCONbits 0 3 `i -> -> -> 0 `i `Vuc `i 627  ]
 [; ;interrupts.c: 258: {
 "258
 {
@@ -5560,8 +5568,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 634  ]
 "333
 [e :U 627 ]
-[; ;interrupts.c: 333: else if(PIR2bits.TMR4IF)
-[e $ ! != -> . . _PIR2bits 0 1 `i -> -> -> 0 `i `Vuc `i 635  ]
+[; ;interrupts.c: 333: else if(PIR2bits.TMR4IF && PIE2bits.TMR4IE)
+[e $ ! && != -> . . _PIR2bits 0 1 `i -> -> -> 0 `i `Vuc `i != -> . . _PIE2bits 0 1 `i -> -> -> 0 `i `Vuc `i 635  ]
 [; ;interrupts.c: 334: {
 "334
 {
@@ -5606,8 +5614,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 638  ]
 "352
 [e :U 635 ]
-[; ;interrupts.c: 352: else if(PIR2bits.TMR6IF)
-[e $ ! != -> . . _PIR2bits 0 2 `i -> -> -> 0 `i `Vuc `i 639  ]
+[; ;interrupts.c: 352: else if(PIR2bits.TMR6IF && PIE2bits.TMR6IE)
+[e $ ! && != -> . . _PIR2bits 0 2 `i -> -> -> 0 `i `Vuc `i != -> . . _PIE2bits 0 2 `i -> -> -> 0 `i `Vuc `i 639  ]
 [; ;interrupts.c: 353: {
 "353
 {

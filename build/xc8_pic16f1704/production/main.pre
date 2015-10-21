@@ -6312,10 +6312,10 @@ void UseIRCode(unsigned char* Code, unsigned long NEC);
 void Disable_IR(void);
 void Enable_IR(void);
 
-# 43 "main.c"
+# 45 "main.c"
 const unsigned char Version[] = {"1.0_DW0a"};
 
-# 49
+# 51
 void main(void)
 {
 unsigned char i=0;

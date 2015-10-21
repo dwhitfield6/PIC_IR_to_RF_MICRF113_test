@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/xc8_pic16f1704/production\PIC_IR_to_RF_MICRF113_test.production.hex">
+    <memory name="program">
+      <units>words</units>
+      <length>4096</length>
+      <used>1792</used>
+      <free>2304</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>512</length>
+      <used>245</used>
+      <free>267</free>
+    </memory>
+  </executable>
+</project>

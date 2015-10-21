@@ -62,7 +62,7 @@ void interrupt isr(void)
 
     /* Dont allow nested ISRs */
     INTCONbits.GIE = 0;
-    if(PIR1bits.TMR2IF)
+    if(PIR1bits.TMR2IF && PIE1bits.TMR2IE)
     {
         /* Timer 2 interrupt */
         /* This is used for the RF Code */
@@ -226,7 +226,7 @@ void interrupt isr(void)
             PIE1bits.TMR2IE = 1;//Enable timer 2 interupt
         }
     }
-    else if(PIR1bits.TMR1IF)
+    else if(PIR1bits.TMR1IF && PIE1bits.TMR1IE)
     {
         /* IR receiver Timeout or Repeat Code */
         PIE1bits.TMR1IE = 0;
@@ -254,7 +254,7 @@ void interrupt isr(void)
         #endif
         PIR1bits.TMR1IF = 0;
     }
-    else if(IOCCFbits.IOCCF4)
+    else if(IOCCFbits.IOCCF4 && INTCONbits.IOCIE)
     {
         /* Interrupt by the IR receiver */        
         /* disable negative edge interrupt */
@@ -330,7 +330,7 @@ void interrupt isr(void)
         IOCCFbits.IOCCF4 = 0;
         INTCONbits.IOCIF = 0;        
     }
-    else if(PIR2bits.TMR4IF)
+    else if(PIR2bits.TMR4IF && PIE2bits.TMR4IE)
     {
         /* This is the timeout of the wait period for sending the RF data */
         Timer4OFF();
@@ -349,7 +349,7 @@ void interrupt isr(void)
             Sent = YES;
         }
     }
-    else if(PIR2bits.TMR6IF)
+    else if(PIR2bits.TMR6IF && PIE2bits.TMR6IE)
     {
         /* This is the timeout of the wait period for the LEDs */
         Timer6OFF();
