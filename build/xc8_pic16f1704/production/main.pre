@@ -6313,7 +6313,7 @@ void Disable_IR(void);
 void Enable_IR(void);
 
 # 45 "main.c"
-const unsigned char Version[] = {"1.0_DW0a"};
+const unsigned char Version[] = {"6.0_DW0a"};
 
 # 51
 void main(void)
